@@ -13,8 +13,8 @@
 <% @tasks.each do |task| %>
   <tr>
     <td><%= task.description %></td>
-    <td><%= task.done %></td>
-    <td><%= task.date %></td>
+    <td><%= check_box_tag(:task, value = nil, checked = task.done) %></td>
+    <td><%= task.date.to_formatted_s(:short) %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
     <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>

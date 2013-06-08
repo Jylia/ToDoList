@@ -3,7 +3,6 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.order(:date)
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tasks }
@@ -44,7 +43,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+        format.html { redirect_to tasks_url }
         format.json { render json: @task, status: :created, location: @task }
       else
         format.html { render action: "new" }

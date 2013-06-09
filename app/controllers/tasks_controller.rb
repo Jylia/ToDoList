@@ -61,7 +61,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.update_attributes(params[:task])
-        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
+        format.html { redirect_to tasks_url, notice: 'Task was successfully updated.' }
         format.js {}
         format.json { head :no_content }
       else

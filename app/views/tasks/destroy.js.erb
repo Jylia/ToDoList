@@ -1,1 +1,1 @@
-$('task_<%= @task.id %>').remove()
+$("<%= escape_javascript(render @task) %>").remove();

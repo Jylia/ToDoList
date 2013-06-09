@@ -1,7 +1,8 @@
-  <tr>
-    <td><%= task.description %></td>
-    <td><%= check_box_tag(:task, value = nil, checked = task.done) %></td>
-    <td><%= task.date.to_formatted_s(:short) %></td>
-    <td><%= button_to 'Edit', edit_task_path(task), method: :get %></td>
-    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<table>
+  <td> <%= task.description %></td>
+  <td> <%= check_box_tag(:task, value = nil, checked = task.done) %></td>
+  <td> <%= task.date.to_formatted_s(:short) %>  </td>
+  <td> <%= button_to 'Edit', edit_task_path(task), method: :get, remote: true %></td>
+  <td> <%= link_to 'Destroy', task, method: :delete, remote: true %><br /></td>
+</table>
+  

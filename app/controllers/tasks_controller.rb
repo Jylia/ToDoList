@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.order(:date)
+    @task = Task.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tasks }
@@ -43,7 +44,8 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to tasks_url }
+        format.html { redirect_to @task }
+        format.js {}
         format.json { render json: @task, status: :created, location: @task }
       else
         format.html { render action: "new" }
@@ -60,6 +62,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update_attributes(params[:task])
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
+        format.js {}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -75,7 +78,8 @@ class TasksController < ApplicationController
     @task.destroy
 
     respond_to do |format|
-      format.html { redirect_to tasks_url }
+      format.html { redirect_to @task }
+      format.js {}
       format.json { head :no_content }
     end
   end

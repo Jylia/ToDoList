@@ -15,4 +15,11 @@ class ApplicationController < ActionController::Base
     @current_user = current_user_session && current_user_session.record
   end
 
+  def current_desk
+    Desk.find(session[:desk_id])
+  rescue ActiveRecord::RecordNotFound
+    desk = Desk.create
+    session[:desk_id] = desk.id
+    desk
+  end  
 end

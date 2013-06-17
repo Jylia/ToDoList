@@ -2,8 +2,11 @@
 <%= javascript_include_tag :defaults %>
 
 <ul id="tasks">
+ 
 <% @tasks.each do |task| %>
-  <%= render task %>
+  <% if task.id_user = current_user then %>
+    <%= render task %>
+  <% end %>
 <% end %>
 </ul>
 

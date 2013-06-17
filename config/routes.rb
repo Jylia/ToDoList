@@ -1,8 +1,4 @@
 Mytask::Application.routes.draw do
-  resources :line_items
-
-
-  resources :desks
 
 
   resources :tasks

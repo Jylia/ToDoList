@@ -46,7 +46,7 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(params[:task])
-
+    @task.id_user = current_user.id
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task }

@@ -4,10 +4,10 @@
 <ul id="tasks">
  
 <% @tasks.each do |task| %>
-  <% if task.id_user = current_user then %>
+  <% if task.id_user==current_user.id %>
     <%= render task %>
   <% end %>
-<% end %>
+  <% end %>
 </ul>
 
 <h2>Entry form</h2>

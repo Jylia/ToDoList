@@ -1,16 +1,15 @@
-<h1>Listing tasks</h1>
 <%= javascript_include_tag :defaults %>
 
 <ul id="tasks">
+<h1>Listing tasks</h1>
  
 <% @tasks.each do |task| %>
   <% if task.id_user==current_user.id %>
     <%= render task %>
-  <% end %>
-  <% end %>
+<% end %>
+<% end %>
 </ul>
 
-<h2>Entry form</h2>
 <div id="form">
   <%= render :partial => "form" %>
 </div>

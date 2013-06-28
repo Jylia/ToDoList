@@ -1,1 +1,2 @@
 $("#form > form").replaceWith("<%= escape_javascript(render(:partial => "form"))%>")
+$("<%= escape_javascript(render "form") %>").appendTo("#tasks");

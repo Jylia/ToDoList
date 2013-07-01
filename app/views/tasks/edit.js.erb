@@ -1,2 +1,6 @@
 $("#form > form").replaceWith("<%= escape_javascript(render(:partial => "form"))%>")
-$("<%= escape_javascript(render "form") %>").appendTo("#tasks");
+
+$('#<%= @task.id %>').hide('slow');
+
+$('#form_<%= @task.id %>').css({'display':'block'});
+ 

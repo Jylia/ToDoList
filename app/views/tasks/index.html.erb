@@ -5,12 +5,20 @@
  
 <% @tasks.each do |task| %>
   <% if task.id_user==current_user.id %>
+    <li id=<%= task.id %>>
     <%= render task %>
-<% end %>
+    </li>
+    <div id="form_<%= task.id %>", style="display: none">
+    <div id="form">
+      <%= render :partial => "form" %>
+    </div> </div> 
+  <% end %>
+  
 <% end %>
 </ul>
 
 <div id="form">
   <%= render :partial => "form" %>
-</div>
+</div>  
+
 

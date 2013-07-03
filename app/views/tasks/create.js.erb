@@ -1,2 +1,5 @@
-$("<%= escape_javascript(render @task) %>").appendTo("#tasks");
-$("<%= escape_javascript(render "form") %>").appendTo("#tasks");
+$("<li class='task_item' id='<%= @task.id %>'><%= escape_javascript(render @task) %></li>").appendTo("#tasks"); 
+$("<div class='form_task' id='form_<%= @task.id %>', style='display: none'><div class='form_1'><%= escape_javascript(render :partial => "form") %></div>").appendTo("#tasks"); 
+$('#form_new').hide('slow');
+
+

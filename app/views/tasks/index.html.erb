@@ -5,11 +5,11 @@
  
 <% @tasks.each do |task| %>
   <% if task.id_user==current_user.id %>
-    <li id=<%= task.id %>>
+    <li id=<%= task.id %> class="task_item">
     <%= render task %>
     </li>
-    <div id="form_<%= task.id %>", style="display: none">
-    <div id="form">
+    <div id="form_<%= task.id %>" class="form_task", style="display: none">
+    <div id="form" class="form_1">
       <%= render :partial => "form" %>
     </div> </div> 
   <% end %>
@@ -17,8 +17,12 @@
 <% end %>
 </ul>
 
-<div id="form">
-  <%= render :partial => "form" %>
-</div>  
+<%= link_to 'New Task', new_task_path, remote: true %>
+<div id="form_new", style="display: none">
+  <div id="form">
+    <%= render :partial => "form" %>
+  </div>
+<div>  
+
 
 

@@ -1,4 +1,3 @@
 $("#<%= dom_id(@task) %>").replaceWith("<%= escape_javascript(render(:partial => @task)) %>");
-<% @task = Task.new # reset for new form %>
-$(".edit_task").replaceWith("<%= escape_javascript(render(:partial => "form"))%>")
-$(".new_task")[0].reset();
+$('#<%= @task.id %>').show('slow');
+$('#form_<%= @task.id %>').hide('slow');

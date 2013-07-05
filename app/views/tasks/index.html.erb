@@ -1,27 +1,26 @@
 <%= javascript_include_tag :defaults %>
-
-<ul id="tasks">
 <h1>Listing tasks</h1>
+
+<ul class="tasks">
  
 <% @tasks.each do |task| %>
   <% if task.id_user==current_user.id %>
-    <li id=<%= task.id %> class="task_item">
-    <%= render task %>
-    </li>
-    <div id="form_<%= task.id %>" class="form_task", style="display: none">
-    <div id="form" class="form_1">
+    <li id=task_<%= task.id %>>
+	  <div class="show">
+        <%= render task %>
+      </div>
+    
+    <div class="form", style="display: none">
       <%= render :partial => "form" %>
-    </div> </div> 
+    </div> 
+	</li>
   <% end %>
-  
 <% end %>
 </ul>
 
 <%= link_to 'New Task', new_task_path, remote: true %>
-<div id="form_new", style="display: none">
-  <div id="form">
-    <%= render :partial => "form" %>
-  </div>
+<div class="form_new", style="display: none">
+  <%= render :partial => "form" %>
 <div>  
 
 

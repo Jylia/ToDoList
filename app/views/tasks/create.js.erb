@@ -1,5 +1,6 @@
-$("<li class='task_item' id='<%= @task.id %>'><%= escape_javascript(render @task) %></li>").appendTo("#tasks"); 
-$("<div class='form_task' id='form_<%= @task.id %>', style='display: none'><div class='form_1'><%= escape_javascript(render :partial => "form") %></div>").appendTo("#tasks"); 
-$('#form_new').hide('slow');
+$("<li id='task_<%= @task.id %>'><div class='show'><%= escape_javascript(render @task) %></div>\
+   <div class='form', style='display: none'><%= escape_javascript(render :partial => "form") %></div>\
+   </div>").appendTo('.tasks'); 
+$('.form_new').hide('slow');
 
 

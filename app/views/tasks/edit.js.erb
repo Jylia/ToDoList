@@ -1,6 +1,6 @@
-$('#form_<%= @task.id %>').show('slow');
-$('#<%= @task.id %>').hide('slow');
-$("#form > form").replaceWith("<%= escape_javascript(render(:partial => "form"))%>")
+$('#task_<%= @task.id %> .form').show('slow');
+$('#task_<%= @task.id %> .show').hide('slow');
+$(".form > form").replaceWith("<%= escape_javascript(render(:partial => "form"))%>")
 
 
  

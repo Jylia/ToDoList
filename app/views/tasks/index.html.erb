@@ -6,13 +6,15 @@
   <% @tasks.where('id_user =?', current_user.id).each do |task| %>
     <%= render task %>
   <% end %>
-
 </ul>
 
 <%= link_to 'New Task', new_task_path, remote: true %>
 <div class="form_new", style="display: none">
   <%= render :partial => "form" %>
-<div>  
+</div>  
+
+
+
 
 
 

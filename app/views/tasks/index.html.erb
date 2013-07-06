@@ -2,11 +2,10 @@
 <h1>Listing tasks</h1>
 
 <ul class="tasks">
- 
-<% @tasks.each do |task| %>
-  <% if task.id_user==current_user.id %>
+
+ <% @tasks.where('id_user =?', current_user.id).each do |task| %>
     <li id=task_<%= task.id %>>
-	  <div class="show">
+      <div class="show">
         <%= render task %>
       </div>
     
@@ -15,7 +14,6 @@
     </div> 
 	</li>
   <% end %>
-<% end %>
 </ul>
 
 <%= link_to 'New Task', new_task_path, remote: true %>

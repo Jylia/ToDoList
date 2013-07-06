@@ -3,17 +3,10 @@
 
 <ul class="tasks">
 
- <% @tasks.where('id_user =?', current_user.id).each do |task| %>
-    <li id=task_<%= task.id %>>
-      <div class="show">
-        <%= render task %>
-      </div>
-    
-    <div class="form", style="display: none">
-      <%= render :partial => "form" %>
-    </div> 
-	</li>
+  <% @tasks.where('id_user =?', current_user.id).each do |task| %>
+    <%= render task %>
   <% end %>
+
 </ul>
 
 <%= link_to 'New Task', new_task_path, remote: true %>

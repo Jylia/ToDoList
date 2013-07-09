@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.order(:date)
+    @tasks = Task.where('id_user =?', current_user.id).order(:date)
     @task = Task.new
     respond_to do |format|
       format.html # index.html.erb

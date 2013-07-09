@@ -1,5 +1,4 @@
 <li id=task_<%= task.id %>>
-  <%= div_for task do %>
     <div class="show">   
       <%= task.description %>
       <%= check_box_tag(:task, value = nil, checked = task.done) %>
@@ -13,7 +12,6 @@
     <div class="form", style="display: none">
       <%= render :partial => "form" %>
     </div> 
-  <% end %>
 </li>
     
   

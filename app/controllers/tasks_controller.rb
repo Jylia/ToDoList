@@ -88,4 +88,16 @@ class TasksController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def destroy_all
+    @tasks_del = Task.All.where('done =?', true)
+    @tasks_del.each do |task|
+    task.destroy
+    end
+
+    respond_to do |format|
+      format.html { redirect_to tasks_url }
+      format.json { render :json => to_delete.to_json }
+    end
+  end
 end

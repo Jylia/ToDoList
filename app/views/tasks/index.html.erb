@@ -2,9 +2,7 @@
 <h1>Listing tasks</h1>
 
 <ul class="tasks">
-  <% @tasks.each do |task| %>
-    <%= render task %>
-  <% end %>	
+  <%= render @tasks %>
 </ul>
 
 <%= link_to 'New Task', new_task_path, remote: true %>
@@ -12,6 +10,6 @@
   <%= render :partial => "form" %>
 </div>  
 
-<%= button_to "Delete all", task, :method => :delete, class: 'destroy_all', :confirm => 'Are you sure?' %>
+<%= button_to "Delete all", @task, :method => :delete, class: 'destroy_all', :confirm => 'Are you sure?' %>
 
 

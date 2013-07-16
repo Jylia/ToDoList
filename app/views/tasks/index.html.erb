@@ -2,7 +2,9 @@
 <h1>Listing tasks</h1>
 
 <ul class="tasks">
-  <%= render @tasks %>
+  <% @tasks.each do |task| %> 
+    <%= render task %>
+  <% end %>	
 </ul>
 
 <%= link_to 'New Task', new_task_path, remote: true %>

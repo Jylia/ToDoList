@@ -12,6 +12,6 @@
   <%= render :partial => "form" %>
 </div>  
 
-<%= button_to "Delete all", @task, :method => :delete, class: 'destroy_all', :confirm => 'Are you sure?' %>
+<%= button_to "Delete all", @tasks_del, :action => 'destroy_all', :method => :delete, :confirm => 'Are you sure?' %>
 
 

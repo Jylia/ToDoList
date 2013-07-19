@@ -91,13 +91,13 @@ class TasksController < ApplicationController
   
   def destroy_all
     @tasks_del = Task.All.where('done =?', true)
-    @tasks_del.each do |task|
-    task.destroy
+	@tasks_del.each do |task|
+      task.destroy
     end
 
     respond_to do |format|
-      format.html { redirect_to tasks_url }
-      format.json { render :json => to_delete.to_json }
+      format.html { redirect_to @tasks_del }
+      format.json { :no_content }
     end
   end
 end

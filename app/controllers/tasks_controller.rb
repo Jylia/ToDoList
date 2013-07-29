@@ -89,15 +89,14 @@ class TasksController < ApplicationController
     end
   end
   
-  def destroy_all
-    @tasks_del = Task.All.where('done =?', true)
-	@tasks_del.each do |task|
-      task.destroy
-    end
-
-    respond_to do |format|
-      format.html { redirect_to @tasks_del }
-      format.json { :no_content }
-    end
+  def destroy_completed
+	#@tasks = Task.where('done =?', true)
+	#@tasks.each.destroy
+	Task.where('done =?', true).destroy_all
+	respond_to do |format|
+    format.html { redirect_to tasks_path }
+    format.json { head :no_content }
   end
-end
+  end
+
+  end

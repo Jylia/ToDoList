@@ -11,7 +11,4 @@
 <div class="form_new", style="display: none">
   <%= render :partial => "form" %>
 </div>  
-
-<%= button_to "Delete all", destroy_all_tasks_path(@tasks_del), :method => :delete_all, :confirm => 'Are you sure?' %>
-
-
+<%= link_to "Delete all", destroy_completed_tasks_path, :method => :delete, :confirm => 'Are you sure?' %>

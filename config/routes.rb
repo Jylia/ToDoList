@@ -8,9 +8,8 @@ Mytask::Application.routes.draw do
     collection do
       delete :destroy_completed
     end
-	member do
-	  post :completed
-	end  
   end
+
+  match 'completed/:id' => 'tasks#completed', :as => 'completed' 
   
 end

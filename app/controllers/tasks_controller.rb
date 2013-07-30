@@ -94,9 +94,19 @@ class TasksController < ApplicationController
 	#@tasks.each.destroy
 	Task.where('done =?', true).destroy_all
 	respond_to do |format|
-    format.html { redirect_to tasks_path }
-    format.json { head :no_content }
-  end
+      format.html { redirect_to tasks_path }
+      format.json { head :no_content }
+    end
   end
 
+  def completed 
+    @task = Task.find(params[:id])
+    @task.done = true
+    @task.save
+	respond_to do |format|
+      format.html { redirect_to tasks_path }
+      format.json { head :no_content }
+    end
+  end  
+  
   end

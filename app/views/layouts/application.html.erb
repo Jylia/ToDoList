@@ -15,7 +15,6 @@
         <%= current_user.username%> 
         </div>
         <% else %>
-        <%= button_to "Register", new_user_path, method: :get %>
         <%= button_to "Login", :login %>
         <% end %>
     </div>

@@ -9,7 +9,7 @@
 <body>
 <div id="nav">
         <% if current_user %>
-        <div align="right"; id="buttons">
+        <div id="buttons">
         <%= button_to "Edit Profile", edit_user_path(current_user.id), method: :get %>
         <%= button_to "Logout", :logout%>
         <%= current_user.username%> 
